@@ -1,3 +1,3 @@
 export function App() {
-  return <h1>Projeto está funcionando</h1>
+  return <h1>Projeto está funcionando</h1>;
 }
