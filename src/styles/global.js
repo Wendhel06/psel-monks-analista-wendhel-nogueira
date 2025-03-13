@@ -26,8 +26,11 @@ export const GlobalStyle = createGlobalStyle`
   padding:0px;
 }
 
-body {
-  background-color: red;
+.container {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1410px;
+  background-color: blue;
 }
 
 h1, h2, h3, h4 {
