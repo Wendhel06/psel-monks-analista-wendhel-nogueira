@@ -6,38 +6,61 @@ export function Formulario() {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
+  const [answerUser, setAnswerUser] = useState("");
+  const [isCorrect, setIsCorrect] = useState(null);
+
+  const num1 = 428;
+  const num2 = 600;
+  const somaTotal = num1 + num2;
+
+  function isFormValid() {
+    return (
+      name.trim() !== "" &&
+      email.trim() !== "" &&
+      phone.trim() !== "" &&
+      message.trim() !== "" &&
+      answerUser.trim() !== ""
+    );
+  }
 
   function handleSubmit(event) {
     event.preventDefault();
-    try {
-      fetch("http://monkswendhelnogueiraapi.local/json/v1/formulario", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name,
-          email,
-          phone,
-          message,
-        }),
-      })
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error(`Erro na requisição: ${response.status}`);
-          } else {
-            return response.json();
-          }
+
+    if (Number(answerUser) === somaTotal) {
+      setIsCorrect(true);
+      try {
+        fetch("http://monkswendhelnogueiraapi.local/json/v1/formulario", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name,
+            email,
+            phone,
+            message,
+          }),
         })
-        .then((json) => {
-          setName("");
-          setEmail("");
-          setPhone("");
-          setMessage("");
-          console.log(json);
-        });
-    } catch (error) {
-      console.error("Erro ao enviar o formulário:", error);
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error(`Erro na requisição: ${response.status}`);
+            } else {
+              return response.json();
+            }
+          })
+          .then((json) => {
+            console.log(json);
+          });
+        setName("");
+        setEmail("");
+        setPhone("");
+        setMessage("");
+        setAnswerUser("");
+      } catch (error) {
+        console.error("Erro ao enviar o formulário:", error);
+      }
+    } else {
+      setIsCorrect(false);
     }
   }
 
@@ -87,7 +110,28 @@ export function Formulario() {
         required
         rows={1}
       />
-      <button type="submit" id="submit-button" aria-live="polite">
+      <div>
+        <p>
+          Verificação de segurança <span>428</span> + <span>600</span> ={" "}
+          <input
+            type="number"
+            value={answerUser}
+            onChange={(e) => setAnswerUser(e.target.value)}
+            required
+          />
+        </p>
+        {isCorrect === false && (
+          <p style={{ color: "red" }}>
+            Resultado da verificação de segurança incorreto.Tente novamente.
+          </p>
+        )}
+      </div>
+      <button
+        type="submit"
+        id="submit-button"
+        aria-live="polite"
+        disabled={!isFormValid()}
+      >
         Enviar
       </button>
     </form>
