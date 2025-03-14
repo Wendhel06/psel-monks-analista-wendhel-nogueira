@@ -1,7 +1,7 @@
 export function Header() {
   return (
     <header>
-      <a href="#"><img src="" alt="" /></a>
+      <a href="#"><img src="#" alt="#" /></a>
       <nav>
         <ul className="menu">
           <li><a href="#">categoria 1</a></li>
