@@ -12,7 +12,7 @@ export function Header({ dataObject }) {
   return (
     <header>
       <div className="hold-content-header">
-        <div className="hold-menu">
+        <div className="hold-menu default-container">
           <a className="hold-logotipo-link" href="#">
             <img
               src={dataObject.logotipo}

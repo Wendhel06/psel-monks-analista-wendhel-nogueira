@@ -6,7 +6,7 @@ import "./global.css";
 
 export function App() {
   const [data, setData] = useState({});
-  const [cards, setCards] = useState([]);
+  const [products, setProducts] = useState([]);
 
   async function fetchApi() {
     try {
@@ -25,13 +25,12 @@ export function App() {
   async function fetchCards() {
     try {
       const response = await fetch(
-        "http://monkswendhelnogueiraapi.local/json/wp/v2/destaque",
+        "http://monkswendhelnogueiraapi.local/json/wp/v2/products",
       );
 
       if (response.ok) {
         const json = await response.json();
-        console.log(json);
-        return setCards(json);
+        return setProducts(json);
       }
     } catch (error) {
       throw new Error("Erro na requisição dos cards na api", error);
@@ -48,7 +47,7 @@ export function App() {
   return (
     <>
       <Header dataObject={dataObject} />
-      <Home dataObject={dataObject} cards={cards} />
+      <Home dataObject={dataObject} products={products} />
     </>
   );
 }

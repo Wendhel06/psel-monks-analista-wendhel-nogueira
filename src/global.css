@@ -50,6 +50,11 @@ a {
   text-decoration: none;
 }
 
+img {
+  max-width: 100%;
+  display: block;
+}
+
 ul,
 li {
   list-style: none;

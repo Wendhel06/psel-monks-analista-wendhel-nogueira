@@ -2,6 +2,7 @@
   padding: 6px 6px 16px 6px;
   border-radius: 8px;
   background-color: #fcfcfd;
+  color: #0c111d;
 }
 
 .hold-card-img {
@@ -31,6 +32,11 @@
   line-height: 150%;
   color: #0c111d;
   font-weight: 100;
+}
+
+.card:hover .hold-card-title,
+.card:hover .card-text {
+  color: #3c0c60;
 }
 
 @media (max-width: 767px) {
