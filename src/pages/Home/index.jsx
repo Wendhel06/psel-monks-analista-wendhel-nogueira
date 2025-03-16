@@ -1,11 +1,12 @@
 import React from "react";
 import "./styles.css";
+import { Card } from "./components/Card";
 
-export function Home({ dataObject }) {
+export function Home({ dataObject, cards }) {
   return (
-    <div className="content">
-      <div className="hold-all-sections">
-        <section className="hero-banner">
+    <main>
+      <section className="hero-banner">
+        <div>
           <div className="hero-banner-text">
             <h1 className="hero-banner-title">
               {dataObject.hero_banner_title}
@@ -21,9 +22,29 @@ export function Home({ dataObject }) {
               />
             </div>
           </div>
-        </section>
-      </div>
-      {/* <img src={dataObject.hero_banner_monks_image} alt="" /> */}
-    </div>
+          {/* <div className="monks-img">
+            <img src={dataObject.hero_banner_monks_image} alt="" />
+          </div> */}
+        </div>
+      </section>
+      <section className="cards">
+        <h2 className="section-title">{dataObject.second_section_title}</h2>
+        <p className="section-main-text">
+          {dataObject.second_section_description}
+        </p>
+        <div className="grid-cards">
+          {cards.map(({ id, content, title, thumbnail }) => {
+            return (
+              <Card
+                id={id}
+                content={content}
+                title={title}
+                thumbnail={thumbnail}
+              />
+            );
+          })}
+        </div>
+      </section>
+    </main>
   );
 }

@@ -3,16 +3,13 @@
   margin: 0 auto;
   background-color: #2d2d2d;
   max-width: 1366px;
-  padding-left: 80px;
-  padding-right: 80px;
-  position: relative;
 }
 
 .hold-menu {
   width: 100%;
   margin: 0 auto;
   max-width: 1206px;
-  padding: 24px 0px;
+  padding: 24px;
   display: flex;
   align-items: center;
 }
@@ -57,7 +54,7 @@
     padding: 0px 10px;
   }
 
-  .hold-content-header {
+  .hold-menu {
     padding-left: 40px;
     padding-right: 40px;
   }
@@ -103,12 +100,6 @@
   }
 
   .hold-menu {
-    padding: 16px 0px;
-    align-items: center;
-  }
-
-  .hold-content-header {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding: 16px 24px;
   }
 }
