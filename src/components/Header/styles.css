@@ -1,0 +1,114 @@
+.hold-content-header {
+  width: 100%;
+  margin: 0 auto;
+  background-color: #2d2d2d;
+  max-width: 1366px;
+  padding-left: 80px;
+  padding-right: 80px;
+  position: relative;
+}
+
+.hold-menu {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1206px;
+  padding: 24px 0px;
+  display: flex;
+  align-items: center;
+}
+
+.hold-logotipo-link {
+  height: 24px;
+  width: 100%;
+  max-width: 140px;
+}
+
+.hold-logotipo-link img {
+  width: 100%;
+  height: 100%;
+}
+
+.hold-navigation {
+  margin-left: 24px;
+}
+
+.hold-navigation ul {
+  display: flex;
+}
+
+.hold-navigation ul li a {
+  color: #eae8e4;
+  font-size: 20px;
+  letter-spacing: 0%;
+  padding: 0px 20px;
+}
+
+.hold-navigation ul li a:hover {
+  color: #3c0c60;
+  cursor: pointer;
+}
+
+.hamburguer-icon {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .hold-navigation ul li a {
+    padding: 0px 10px;
+  }
+
+  .hold-content-header {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .hamburguer-icon {
+    display: block;
+    color: #eae8e4;
+  }
+
+  .hamburguer-icon:hover {
+    color: #3c0c60;
+  }
+
+  .hold-navigation .hidden {
+    display: none;
+  }
+
+  .hold-navigation .visible {
+    background: #dfbbfe;
+    position: absolute;
+    left: 0px;
+    top: 56px;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+  }
+
+  .hold-navigation .visible li {
+    list-style: inside;
+    padding: 24px;
+  }
+
+  .hold-navigation .visible li a {
+    color: #2d2d2d;
+    padding: 0px;
+  }
+
+  .hamburguer-icon:hover {
+    color: #3c0c60;
+  }
+
+  .hold-menu {
+    padding: 16px 0px;
+    align-items: center;
+  }
+
+  .hold-content-header {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}

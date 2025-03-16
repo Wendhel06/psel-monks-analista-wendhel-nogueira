@@ -1,3 +1,9 @@
+import { Formulario } from "../Form";
+
 export function Footer() {
-  return <footer>Footer está funcionando</footer>
+  return (
+    <footer>
+      <Formulario />
+    </footer>
+  );
 }
