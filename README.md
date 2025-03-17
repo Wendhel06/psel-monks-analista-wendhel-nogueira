@@ -1,12 +1,35 @@
-# React + Vite
+# Teste Técnico - Front-end e Back-end (React.js + WordPress API)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto consiste em um front-end desenvolvido com **React.js** e **Vite**, que consome uma API criada no **WordPress**. O back-end foi implementado diretamente no arquivo `functions.php` do WordPress e utiliza o aplicativo **Local** para rodar o servidor.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tecnologias Utilizadas
 
-## Expanding the ESLint configuration
+### **Front-end**
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React.js (Vite)
+- Fetch
+- Validação de formulário
+
+### **Back-end**
+
+- WordPress (API REST)
+- PHP (functions.php)
+
+---
+
+## 📂 Instalação e Execução
+
+### 1️⃣ Clonar o repositório
+
+```sh
+git clone https://github.com/seu-usuario/psel-monks-analista-wendhel-nogueira
+cd psel-monks-analista-wendhel-nogueira
+
+### **Instalar as dependências do front-end**
+npm install
+
+### **Executar o projeto**
+npm run dev
+```
