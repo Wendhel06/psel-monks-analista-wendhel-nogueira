@@ -1,4 +1,4 @@
-import { Formulario } from "../Form";
+import { Formulario } from "./components/Form";
 import "./styles.css";
 
 export function Footer({ dataObject }) {

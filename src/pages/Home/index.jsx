@@ -29,7 +29,7 @@ export function Home({ dataObject, products }) {
               <img
                 className="hero-banner-scroll-img"
                 src={dataObject.hero_banner_scroll_image}
-                alt=""
+                alt="img-scroll"
               />
             </div>
           </div>
@@ -75,17 +75,17 @@ export function Home({ dataObject, products }) {
             </div>
 
             <div className="third-section-grid-hold-img">
-              <img src={dataObject.third_section_image_1} alt="" />
+              <img src={dataObject.third_section_image_1} alt="imagem-1" />
             </div>
           </div>
 
           <div className="third-section-col-2">
             <div className="third-section-grid-hold-img">
-              <img src={dataObject.third_section_image_2} alt="" />
+              <img src={dataObject.third_section_image_2} alt="imagem-2" />
             </div>
 
             <div className="third-section-grid-hold-img">
-              <img src={dataObject.third_section_image_3} alt="" />
+              <img src={dataObject.third_section_image_3} alt="imagem-3" />
             </div>
           </div>
         </div>
@@ -105,11 +105,11 @@ export function Home({ dataObject, products }) {
               <img
                 className="google-play-image"
                 src={dataObject.app_section_image1}
-                alt=""
+                alt="google-play-image"
               />
             </a>
             <a href={dataObject.link_app_store} target="_blank">
-              <img src={dataObject.app_section_image2} alt="" />
+              <img src={dataObject.app_section_image2} alt="apple-store" />
             </a>
           </div>
         </div>

@@ -5,7 +5,7 @@ export function Product({ id, permalink, thumbnail, title, excerpt }) {
   return (
     <a href={permalink} className="card" key={id}>
       <div className="hold-card-img">
-        <img src={thumbnail} alt="" />
+        <img src={thumbnail} alt={title} />
       </div>
       <div className="hold-card-text">
         <h3 className="hold-card-title">{title}</h3>
