@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { PhoneInput } from "./PhoneInput.jsx";
+import "./styles.css";
 
 export function Formulario() {
   const [name, setName] = useState("");
@@ -66,60 +66,67 @@ export function Formulario() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="name">Nome</label>
-      <input
-        type="text"
-        name="name"
-        id="name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        aria-required="true"
-        required
-      />
+      <div className="hold-inputs">
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Nome*"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          aria-required="true"
+          required
+        />
 
-      <label htmlFor="email">E-mail</label>
-      <input
-        type="email"
-        name="email"
-        id="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        aria-required="true"
-        required
-      />
+        <input
+          type="email"
+          name="email"
+          placeholder="Email*"
+          id="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          aria-required="true"
+          required
+        />
 
-      <label htmlFor="phone">Telefone</label>
-      <input
-        value={phone}
-        onChange={(e) => setPhone(e.target.value)}
-        type="tel"
-        name="phone"
-        id="phone"
-        aria-required="true"
-        required
-      />
+        <input
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+          type="tel"
+          name="phone"
+          placeholder="Telefone"
+          id="phone"
+          aria-required="true"
+          required
+        />
 
-      <label htmlFor="phone">Mensagem</label>
-      <textarea
-        type="textarea"
-        name="message"
-        id="message"
-        value={message}
-        onChange={(e) => setMessage(e.target.value)}
-        aria-required="true"
-        required
-        rows={1}
-      />
-      <div>
-        <p>
-          Verificação de segurança <span>428</span> + <span>600</span> ={" "}
-          <input
-            type="number"
-            value={answerUser}
-            onChange={(e) => setAnswerUser(e.target.value)}
-            required
-          />
-        </p>
+        <input
+          type="text"
+          name="message"
+          placeholder="Mensagem"
+          id="message"
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          aria-required="true"
+          required
+          rows={1}
+        />
+      </div>
+      <div className="verification-form-container">
+        <div className="hold-verification-input">
+          <p className="verification-title">Verificação de segurança</p>
+          <div className="hold-input-soma">
+            <p className="verification-soma-text">428 + 600</p>
+            <span className="equal">=</span>
+            <input
+              type="number"
+              value={answerUser}
+              placeholder="Resultado*"
+              onChange={(e) => setAnswerUser(e.target.value)}
+              required
+            />
+          </div>
+        </div>
         {isCorrect === false && (
           <p style={{ color: "red" }}>
             Resultado da verificação de segurança incorreto.Tente novamente.
@@ -131,6 +138,7 @@ export function Formulario() {
         id="submit-button"
         aria-live="polite"
         disabled={!isFormValid()}
+        className="button-submit"
       >
         Enviar
       </button>

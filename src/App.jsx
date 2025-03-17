@@ -48,6 +48,7 @@ export function App() {
     <>
       <Header dataObject={dataObject} />
       <Home dataObject={dataObject} products={products} />
+      <Footer dataObject={dataObject} />
     </>
   );
 }

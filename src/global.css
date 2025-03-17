@@ -33,21 +33,22 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: "Helvetica Neue", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: bold;
   letter-spacing: -2%;
 }
 
 p {
-  font-family: "Helvetica Neue", sans-serif;
+  font-family: "Inter", sans-serif;
   color: #eae8e4;
   line-height: 110%;
-  font-weight: 100 !important;
+  font-weight: 400 !important;
 }
 
 a {
-  font-family: "Helvetica Neue", sans-serif;
+  font-family: "Inter", sans-serif;
   text-decoration: none;
+  cursor: pointer;
 }
 
 img {

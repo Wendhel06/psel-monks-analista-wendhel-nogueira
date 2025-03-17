@@ -5,6 +5,7 @@ import { Product } from "./components/Product";
 export function Home({ dataObject, products }) {
   const allCategoriesProduct = [];
   const limitProducts = products.slice(0, 4);
+  const limitProductsToThree = products.slice(0, 3);
   {
     products.forEach((product) => {
       product.categories.forEach((category) => {
@@ -45,7 +46,7 @@ export function Home({ dataObject, products }) {
           </p>
           <div className="grid-cards">
             {limitProducts.map(
-              ({ id, content, title, thumbnail, permalink }) => {
+              ({ id, content, title, thumbnail, permalink, excerpt }) => {
                 return (
                   <Product
                     key={id}
@@ -53,6 +54,7 @@ export function Home({ dataObject, products }) {
                     title={title}
                     thumbnail={thumbnail}
                     permalink={permalink}
+                    excerpt={excerpt}
                   />
                 );
               },
@@ -124,6 +126,21 @@ export function Home({ dataObject, products }) {
               );
             })}
           </div>
+        </div>
+      </section>
+      <section className="section-last-cards mobile-section">
+        <div className="default-container grid-last-products">
+          {limitProductsToThree.map(({ id, title, content, permalink }) => {
+            return (
+              <div key={id} className="grid-card">
+                <h3 className="hold-card-title">{title}</h3>
+                <p className="card-text last-card-text">{content}</p>
+                <a href={permalink} className="card-button">
+                  Lorem ipsum
+                </a>
+              </div>
+            );
+          })}
         </div>
       </section>
     </main>
