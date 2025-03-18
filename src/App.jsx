@@ -8,11 +8,11 @@ export function App() {
   const [data, setData] = useState({});
   const [products, setProducts] = useState([]);
 
+  const apiUrl = import.meta.env.VITE_API_URL;
+
   async function fetchApi() {
     try {
-      const response = await fetch(
-        "http://monkswendhelnogueiraapi.local/json/wp/v2/pages/60",
-      );
+      const response = await fetch(`${apiUrl}json/wp/v2/pages/60`);
       if (response.ok) {
         const json = await response.json();
         setData(json);
@@ -24,9 +24,7 @@ export function App() {
 
   async function fetchCards() {
     try {
-      const response = await fetch(
-        "http://monkswendhelnogueiraapi.local/json/wp/v2/products",
-      );
+      const response = await fetch(`${apiUrl}json/wp/v2/pages/products"`);
 
       if (response.ok) {
         const json = await response.json();

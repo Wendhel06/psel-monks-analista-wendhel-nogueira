@@ -9,6 +9,8 @@ export function Formulario() {
   const [answerUser, setAnswerUser] = useState("");
   const [isCorrect, setIsCorrect] = useState(null);
 
+  const apiUrl = import.meta.env.VITE_API_URL;
+
   const num1 = 428;
   const num2 = 600;
   const somaTotal = num1 + num2;
@@ -29,7 +31,7 @@ export function Formulario() {
     if (Number(answerUser) === somaTotal) {
       setIsCorrect(true);
       try {
-        fetch("http://monkswendhelnogueiraapi.local/json/v1/formulario", {
+        fetch(`${apiUrl}json/v1/formulario`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
