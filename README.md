@@ -21,10 +21,12 @@ Este projeto consiste em um front-end desenvolvido com **React.js** e **Vite**, 
 
 ## 📂 Instalação e Execução
 
-### 1️⃣ Clonar o repositório
+### Clonar o repositório
 
 ```sh
 git clone https://github.com/Wendhel06/psel-monks-analista-wendhel-nogueira
+
+### **Acessa a pasta do projeto**
 cd psel-monks-analista-wendhel-nogueira
 
 ### **Instalar as dependências do front-end**
@@ -32,6 +34,11 @@ npm install
 
 ### **Executar o projeto**
 npm run dev
+
+## 📂 Configuração da api no front
+
+Adicione a URL do seu site WordPress no arquivo .env
+VITE_API_URL=http://URL_DO_WORDPRESS_QUE_ESTEJA_USANDO/
 
 
 ### **Backend**
@@ -41,33 +48,10 @@ http://monkswendhelnogueiraapi.local/
 📌 Endpoints da API
 
 1️⃣ Obter Custom Fields da Página Home
-GET http://monkswendhelnogueiraapi.local/json/wp/v2/pages?slug=home
+GET http://monkswendhelnogueiraapi.local/json/wp/v2/60
 
 2️⃣ Obter Lista de Produtos (Custom Post Type "products")
 GET http://monkswendhelnogueiraapi.local/json/wp/v2/products
-
-
-🛠️ Configuração do Ambiente Local
-
-1️⃣ Instalar o Local Sites
-Se ainda não tiver o Local instalado, baixe em:
-
-🔗 https://localwp.com/
-
-2️⃣ Importar o Projeto no Local Sites
-Abra o Local e clique em Create a New Site.
-Escolha Custom e configure PHP, servidor e banco de dados.
-Defina o nome do site como monkswendhelnogueiraapi.local.
-Finalize a criação e acesse o WordPress.
-
-3️⃣ Instalar os Plugins Necessários
-Certifique-se de que os seguintes plugins estão ativados:
-
-Advanced Custom Fields (ACF) - Para gerenciar os custom fields.
-Safe SVG - Para permitir upload de arquivos SVG.
-
-4️⃣ Configurar o Custom Post Type "products"
-Caso o CPT "products" não esteja aparecendo, verifique se ele foi registrado no functions.php corretamente.
 
 
 ```
